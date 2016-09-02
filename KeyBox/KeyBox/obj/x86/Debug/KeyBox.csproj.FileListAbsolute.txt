@@ -1,0 +1,13 @@
+E:\WP\WP_VS\KeyBox\KeyBox\bin\Debug\KeyBox.exe
+E:\WP\WP_VS\KeyBox\KeyBox\bin\Debug\KeyBox.pdb
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.Properties.Resources.resources
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.csproj.GenerateResource.Cache
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.exe
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.pdb
+E:\WP\WP_VS\KeyBox\KeyBox\bin\Debug\KeyBox.exe.config
+E:\WP\WP_VS\KeyBox\KeyBox\bin\Debug\CSkin.dll
+E:\WP\WP_VS\KeyBox\KeyBox\bin\Debug\CSkin.xml
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.MainUI.resources
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.Register.resources
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.csprojResolveAssemblyReference.cache
+E:\WP\WP_VS\KeyBox\KeyBox\obj\x86\Debug\KeyBox.Login.resources
