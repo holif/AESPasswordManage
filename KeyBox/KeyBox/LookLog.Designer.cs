@@ -39,7 +39,7 @@
             this.Btn_ruturn.BaseColor = System.Drawing.Color.Silver;
             this.Btn_ruturn.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.Btn_ruturn.DownBack = null;
-            this.Btn_ruturn.Location = new System.Drawing.Point(490, 365);
+            this.Btn_ruturn.Location = new System.Drawing.Point(274, 372);
             this.Btn_ruturn.MouseBack = null;
             this.Btn_ruturn.Name = "Btn_ruturn";
             this.Btn_ruturn.NormlBack = null;
@@ -59,7 +59,8 @@
             this.waterText.Multiline = true;
             this.waterText.Name = "waterText";
             this.waterText.ReadOnly = true;
-            this.waterText.Size = new System.Drawing.Size(543, 312);
+            this.waterText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.waterText.Size = new System.Drawing.Size(327, 312);
             this.waterText.TabIndex = 2;
             this.waterText.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.waterText.WaterFont = new System.Drawing.Font("微软雅黑", 8.5F);
@@ -70,7 +71,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(589, 410);
+            this.CanResize = false;
+            this.ClientSize = new System.Drawing.Size(370, 410);
             this.Controls.Add(this.waterText);
             this.Controls.Add(this.Btn_ruturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

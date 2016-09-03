@@ -43,6 +43,8 @@ namespace KeyBox
         private void text_mima_Enter(object sender, System.EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = XMLDealTool.getKeyPath();
+            dlg.Filter = "密钥文件|*.png";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 key = KeyConvert.GetKeyByImage(dlg.FileName);
@@ -70,7 +72,7 @@ namespace KeyBox
                 string keypath = XMLDealTool.getKeyPath() + "\\" + this.record.title + ".png";
                 string nkey = KeyConvert.CreateKey(keypath);
                 nmima = Encrypt.AESEncrypt(nmima, nkey);
-
+                nmima = Encrypt.StringToBase64string(nmima);
                 string url = XMLDealTool.getUrlPath() + "cloudkey/update_pass.php";
                 string data = "username=" + this.username + "&password=" + this.password + "&key=" + nkey + "&num=" + this.record.num + "&mima=" + nmima + "&lable=" + lable;
                 string result = HttpGet.HttpGet_test(url, data);

@@ -53,9 +53,10 @@
             this.text_keyPath.Location = new System.Drawing.Point(73, 51);
             this.text_keyPath.Name = "text_keyPath";
             this.text_keyPath.Size = new System.Drawing.Size(339, 21);
-            this.text_keyPath.TabIndex = 1;
+            this.text_keyPath.TabIndex = 2;
             this.text_keyPath.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.text_keyPath.WaterText = "";
+            this.text_keyPath.Enter += new System.EventHandler(this.text_keyPath_Enter);
             // 
             // Btn_setpath
             // 
@@ -69,7 +70,7 @@
             this.Btn_setpath.NormlBack = null;
             this.Btn_setpath.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.Btn_setpath.Size = new System.Drawing.Size(75, 26);
-            this.Btn_setpath.TabIndex = 2;
+            this.Btn_setpath.TabIndex = 1;
             this.Btn_setpath.Text = "确认设置";
             this.Btn_setpath.UseVisualStyleBackColor = false;
             this.Btn_setpath.Click += new System.EventHandler(this.Btn_setpath_Click);
@@ -99,15 +100,16 @@
             this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel2.Location = new System.Drawing.Point(26, 81);
             this.skinLabel2.Name = "skinLabel2";
-            this.skinLabel2.Size = new System.Drawing.Size(123, 17);
+            this.skinLabel2.Size = new System.Drawing.Size(113, 17);
             this.skinLabel2.TabIndex = 4;
-            this.skinLabel2.Text = "如：c:\\\\dir\\\\keypath";
+            this.skinLabel2.Text = "如：c:\\dir\\keypath";
             // 
             // SetKeyPath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(453, 131);
             this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.Btn_return);

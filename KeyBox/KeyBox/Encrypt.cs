@@ -57,19 +57,27 @@ namespace KeyBox
         //AES-256 解密  
         public static string AESDecrypt(string toDecrypt,string key)
         {
-            // 256-AES key      
-            byte[] keyArray = UTF8Encoding.UTF8.GetBytes(key);
-            byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
+            // 256-AES key    
+            try
+            {
+                byte[] keyArray = UTF8Encoding.UTF8.GetBytes(key);
+                byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
 
-            RijndaelManaged rDel = new RijndaelManaged();
-            rDel.Key = keyArray;
-            rDel.Mode = CipherMode.ECB;
-            rDel.Padding = PaddingMode.PKCS7;
+                RijndaelManaged rDel = new RijndaelManaged();
+                rDel.Key = keyArray;
+                rDel.Mode = CipherMode.ECB;
+                rDel.Padding = PaddingMode.PKCS7;
 
-            ICryptoTransform cTransform = rDel.CreateDecryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+                ICryptoTransform cTransform = rDel.CreateDecryptor();
+                byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
 
-            return UTF8Encoding.UTF8.GetString(resultArray);
+                return UTF8Encoding.UTF8.GetString(resultArray);
+            }
+            catch (Exception e) 
+            {
+                return "error";
+            }
+
         }  
     }
 }

@@ -78,6 +78,8 @@ namespace KeyBox
             int num = selectedRecord.num;
             string mima="";
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.InitialDirectory = XMLDealTool.getKeyPath();
+            dlg.Filter = "密钥文件|*.png";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 string key = KeyConvert.GetKeyByImage(dlg.FileName);
@@ -88,11 +90,17 @@ namespace KeyBox
                 string result = HttpGet.HttpGet_test(url, data);
                 if (result.IndexOf("error") != -1) 
                 {
-                    MessageBox.Show("解析失败，请检查密钥图片是否正确！" , "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("解析失败，请检查密钥图片是否正确！" , "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 //MessageBox.Show("您的账号密码是：" + result, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                result = Encrypt.Base64ToString(result);
                 mima = Encrypt.AESDecrypt(result, key);
+                if (mima.IndexOf("error") != -1)
+                {
+                    MessageBox.Show("解析失败，请检查密钥图片是否正确！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
             else 
             {

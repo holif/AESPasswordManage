@@ -292,6 +292,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(341, 356);
             this.Controls.Add(this.Register_email);
             this.Controls.Add(this.Register_pswdinfo);

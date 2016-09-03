@@ -45,7 +45,7 @@ namespace KeyBox
                 string keypath = XMLDealTool.getKeyPath()+"\\"+title+".png";
                 string key = KeyConvert.CreateKey(keypath);
                 mima = Encrypt.AESEncrypt(mima,key);
-
+                mima = Encrypt.StringToBase64string(mima);
                 title = Encrypt.StringToBase64string(title);
                 zhanghao = Encrypt.StringToBase64string(zhanghao);
                 lable = Encrypt.StringToBase64string(lable);

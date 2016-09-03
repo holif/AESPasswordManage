@@ -13,7 +13,7 @@
 	$mima=fread($file, filesize($dir));
 	fclose($file);
 	
-	$log = date('Y-m-d H:i:s')."	"."parsed password. rn";
+	$log = "\r\n".date('Y-m-d H:i:s')."	"."parsed password.";
 	$fh=fopen("./total_data/".$name."/cloudkey.log","a");
 	fwrite($fh,$log);
 	fclose($fh);

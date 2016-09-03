@@ -3,15 +3,15 @@
 	$password = $_GET['password'];
 	$newpass = $_GET['newpass'];
 	
-	$log = date('Y-m-d H:i:s')."	";
+	$log = "\r\n".date('Y-m-d H:i:s')."	";
 	$fh=fopen("./total_data/".$username."/cloudkey.log","a");
 
 	if(CheckUser($username,$password)==3){
 		$mail = UpdatePass($username,$newpass);
-		$log = $log."update manage password success.\r\n";
+		$log = $log."update manage password success.";
 		echo $mail;
 	} else {
-		$log = $log."update manage password fails.\r\n";
+		$log = $log."update manage password fails.";
 		echo "error";
 	}
 	fwrite($fh,$log);

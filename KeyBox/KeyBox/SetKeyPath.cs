@@ -44,5 +44,15 @@ namespace KeyBox
         {
             this.Close();
         }
+
+        private void text_keyPath_Enter(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                string path = fbd.SelectedPath;
+                text_keyPath.Text = path;
+            }
+        }
     }
 }

@@ -32,7 +32,7 @@
 	fwrite($file,$lable);
 	fclose($file);
 	
-	$log = date('Y-m-d H:i:s')."	"."add password.\r\n";
+	$log = "\r\n".date('Y-m-d H:i:s')."	"."add password.";
 	$fh=fopen("./total_data/".$name."/cloudkey.log","a");
 	fwrite($fh,$log);
 	fclose($fh);	

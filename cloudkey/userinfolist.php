@@ -9,7 +9,7 @@
 	header('Content-type:text/json');
 	$list['list']=list_lable($name);
 	
-	$log = date('Y-m-d H:i:s')."	"."get password list.\r\n";
+	$log = "\r\n".date('Y-m-d H:i:s')."	"."get passwords list.";
 	$fh=fopen("./total_data/".$name."/cloudkey.log","a");
 	fwrite($fh,$log);
 	fclose($fh);

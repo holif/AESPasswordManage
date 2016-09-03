@@ -1,14 +1,4 @@
 <?php
-	if(CheckUser($_GET['username'])==0)
-		print "Error: User exists";
-	else
-	{
-		adduser($_GET['username'],$_GET['password'],$_GET['Email']);
-		print "Now Successful !";
-	}			
-?>
-
-<?php
 	function CheckUser($username){
 		$dir="./total_data/";
 		$user_dir=$dir.$username;
@@ -37,7 +27,7 @@
 		fprintf($fpass,"%s",$email);
 		fclose($fpass);
 		
-		$log = date('Y-m-d H:i:s')."	"."sigin in cloudkey user.\r\n";
+		$log = "\r\n".date('Y-m-d H:i:s')."	"."sigin in cloudkey user.";
 		$fpass=fopen($user_info_dir."/cloudkey.log","w");
 		fprintf($fpass,"%s",$log);
 		fclose($fpass);

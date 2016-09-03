@@ -224,6 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(432, 329);
             this.Controls.Add(this.netStatus);
             this.Controls.Add(this.skinPictureBox1);
