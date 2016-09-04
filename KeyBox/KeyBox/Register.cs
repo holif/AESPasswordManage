@@ -35,6 +35,7 @@ namespace KeyBox
             if(!r.IsMatch(mail))
             {
                 MessageBox.Show("邮箱格式有误！", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             if (username != "" && pass != "" && passinfo != "" && mail != "")
             {
@@ -42,12 +43,12 @@ namespace KeyBox
                 {
                     //创建Email对象
                     Email email = new Email();
-                    email.mailFrom = "admin@baal.xyz";
-                    email.mailPwd = "huo136276";
+                    email.mailFrom = "发送地址";
+                    email.mailPwd = "*******";
                     email.mailSubject = "注册成功";
                     email.mailBody = "请妥善保管您的账号与密码：" + username + "&" + pass;
                     email.isbodyHtml = true;    
-                    email.host = "smtp.ym.163.com";
+                    email.host = "smtp.163.com";//根据自己情况更改
                     email.mailTo = mail;
 
                     string url = XMLDealTool.getUrlPath() + "cloudkey/signin.php";
