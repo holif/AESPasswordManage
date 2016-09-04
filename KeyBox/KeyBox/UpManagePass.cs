@@ -41,12 +41,12 @@ namespace KeyBox
             string cnpass = text_cnpass.Text;
 
             Email email = new Email();
-            email.mailFrom = "admin@baal.xyz";
-            email.mailPwd = "huo136276";
+            email.mailFrom = "发件地址";
+            email.mailPwd = "********";
             email.mailSubject = "提示：修改登陆密码";
             email.mailBody = "您的登陆密码已修改为：" + npass + ",若非本人操作请立即锁定账号，以免造成不必要的损失。";
             email.isbodyHtml = true;
-            email.host = "smtp.ym.163.com";
+            email.host = "smtp.163.com";//根据情况自行更改
 
             password = Encrypt.StringToBase64string(password);
             npass = Encrypt.StringToBase64string(npass);
