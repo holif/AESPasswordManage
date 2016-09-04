@@ -11,20 +11,20 @@ namespace KeyBox
         public static bool setKeyPath(string keypath) 
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"config.xml");
+            doc.Load(@"../../config.xml");
             XmlNode root = null;
             root = doc.DocumentElement;
 
             XmlNode xmlNode = root.SelectSingleNode("path");
             xmlNode.InnerText = keypath;
-            doc.Save(@"config.xml");
+            doc.Save(@"../../config.xml");
             return true;
         }
 
         public static string getKeyPath()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"config.xml");
+            doc.Load(@"../../config.xml");
             XmlNode root = null;
             root = doc.DocumentElement;
 
@@ -36,7 +36,7 @@ namespace KeyBox
         public static string getUrlPath()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"config.xml");
+            doc.Load(@"../../config.xml");
             XmlNode root = null;
             root = doc.DocumentElement;
 
