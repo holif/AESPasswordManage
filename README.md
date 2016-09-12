@@ -13,5 +13,4 @@
   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;email.host = "smtp.163.com";<br/>
   <b>&middot;</b> 运行项目。<br/>
 <h3>3.运行项目</h3>
-  <a href="https://github.com/holif/AESPasswordManage/releases/download/v1.0/AESPasswordManage.zip">下载项目</a>，修改path路径，双击运行即可，运行效果如下。<br/><br/>
-<img src="https://cloud.githubusercontent.com/assets/11350348/18228739/1041512e-728e-11e6-8502-16b55bef7025.png" />
+  <a href="https://github.com/holif/AESPasswordManage/releases/download/v1.0/AESPasswordManage.zip">下载项目</a>，修改path路径，双击即可运行。<br/><br/>
