@@ -1,20 +1,31 @@
 <?php
+	header('Content-type:text/json');
+	include "CheckUser.php";
 	$name=$_GET['username'];
 	$password=$_GET['password'];
-	if(CheckUser($name,$password)!=3)
-	{
-		echo "error";
+	
+	$log = "\r\n".date('Y-m-d H:i:s')."	"."get passwords list";
+	
+	if(file_exists("./total_data/".$name."/cloudkey.log"))
+	{		
+		if(CheckUser($name,$password)!=3)
+		{
+			$log = $log." fail.";
+			echo "get passwords error";
+		} else {
+			$list['list']=list_lable($name);
+			echo json_encode($list);
+			$log = $log.".";
+		}	
+		$fh=fopen("./total_data/".$name."/cloudkey.log","a");
+		fwrite($fh,$log);
+		fclose($fh);
+	} else {
+		echo "error:no user";
 		exit;
 	}
-	header('Content-type:text/json');
-	$list['list']=list_lable($name);
-	
-	$log = "\r\n".date('Y-m-d H:i:s')."	"."get passwords list.";
-	$fh=fopen("./total_data/".$name."/cloudkey.log","a");
-	fwrite($fh,$log);
-	fclose($fh);
-	
-	echo json_encode($list);
+		
+
 ?>
 
 <?php
@@ -35,30 +46,18 @@
 		return $list;
 	}
 	
-	function getFile($dir) //获取指定记录中的三个文件内容
-	{
+	function getFile($dir){ //获取指定记录中的三个文件内容
+	
 		$fileArray=array('title'=>"",'zhanghao'=>"",'lable'=>"");
 		$filename=array('title'=>$dir.'title.dat','zhanghao'=>$dir.'zhanghao.dat','lable'=>$dir.'lable.dat');
 		
-		foreach($filename as $index=>$value)
-		{
+		foreach($filename as $index=>$value){
+			
 			$handle=fopen($value,"rb");
 			$contents=fread($handle, filesize($value));
 			fclose($handle);
 			$fileArray[$index]=$contents;
 		}
 		return $fileArray;
-	}
-	function CheckUser($username,$password)
-	{
-		$dir="./total_data/";
-		$user_dir=$dir.$username;	
-		$user_input_password=md5($password); //加密用户输入的密码
-		$user_passfile_dir=$user_dir."/pass.key"; //读取密钥文件
-		$server_password=file($user_passfile_dir); //获取服务器储存的密码
-		if($user_input_password==$server_password[0])
-			return 3;
-		else
-			return 2;
 	}
 ?>

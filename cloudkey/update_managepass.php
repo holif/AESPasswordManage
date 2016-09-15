@@ -1,19 +1,27 @@
-<?php
+﻿<?php
+
+	include "CheckUser.php";
+
 	$username = $_GET['username'];
 	$password = $_GET['password'];
 	$newpass = $_GET['newpass'];
 	
-	$log = "\r\n".date('Y-m-d H:i:s')."	";
-	$fh=fopen("./total_data/".$username."/cloudkey.log","a");
+	$log = "\r\n".date('Y-m-d H:i:s')."update manage password ";
 
-	if(CheckUser($username,$password)==3){
+	$status = CheckUser($username,$password);
+	
+	if($status==3){
 		$mail = UpdatePass($username,$newpass);
-		$log = $log."update manage password success.";
+		$log = $log."success.";
 		echo $mail;
-	} else {
-		$log = $log."update manage password fails.";
-		echo "error";
+	} elseif($status == 2){
+		$log = $log."fail:password error.";
+		echo "error:password error";
+	} else{
+		echo "error:nouser";
+		exit;
 	}
+	$fh=fopen("./total_data/".$username."/cloudkey.log","a");
 	fwrite($fh,$log);
 	fclose($fh);
 ?>
@@ -33,25 +41,5 @@
 		fclose($fmail);
 		
 		return $mail;
-	}
-?>
-
-<?php
-	function CheckUser($username,$password)
-	{
-		$dir="./total_data/";
-		$user_dir=$dir.$username;
-		if(!file_exists($user_dir)){
-			return 1;
-		}
-		
-		$user_input_password=md5($password); //加密用户输入的密码
-		$user_passfile_dir=$user_dir."/pass.key"; //读取密钥文件
-		$server_password=file($user_passfile_dir); //获取服务器储存的密码
-		
-		if($user_input_password==$server_password[0])
-				return 3;
-		else
-				return 2;	
 	}
 ?>
