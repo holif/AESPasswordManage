@@ -1,4 +1,16 @@
 <?php
+
+	$uname = $_GET['username'];
+	$pword = $_GET['password'];
+	$email = $_GET['Email'];
+
+	if(CheckUser($uname)!=0){
+		adduser($uname,$pword,$email);
+		echo "success";
+	} else {
+		echo "Error,username exist";
+	}
+
 	function CheckUser($username){
 		$dir="./total_data/";
 		$user_dir=$dir.$username;
