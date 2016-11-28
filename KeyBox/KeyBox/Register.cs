@@ -45,7 +45,7 @@ namespace KeyBox
                     Email email = new Email();
                     email.mailFrom = "发送地址";
                     email.mailPwd = "*******";
-                    email.mailSubject = "注册成功";
+                    email.mailSubject = "CloudKeys---安心的密码管家";
                     email.mailBody = "请妥善保管您的账号与密码：" + username + "&" + pass;
                     email.isbodyHtml = true;    
                     email.host = "smtp.163.com";//根据自己情况更改
@@ -62,6 +62,7 @@ namespace KeyBox
                         if (email.Send())
                         {
                             MessageBox.Show("注册成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            System.Diagnostics.Process.Start("explorer.exe", XMLDealTool.getUrlPath() + "cloudkey/success.php");
                         }
                         this.Hide();
                         login.Show();
