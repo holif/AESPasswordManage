@@ -4,7 +4,7 @@
   <meta charset="utf-8" /> 
   <title>用户 注册 反馈</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style.css" />
   <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
   <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
   <script type='text/javascript' src='js/demo.js'></script>
